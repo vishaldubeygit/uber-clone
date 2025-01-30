@@ -113,3 +113,62 @@ Authenticate a user and return a token.
 ### Required Fields
 - `email`: Valid email address
 - `password`: Minimum 6 characters
+
+## Get User Profile
+`GET /users/profile`
+
+Retrieve the authenticated user's profile.
+
+### Response Codes
+
+| Status Code | Description |
+|------------|-------------|
+| 200 | User profile retrieved successfully |
+| 401 | Unauthorized - Invalid or missing token |
+| 500 | Internal Server Error |
+
+### Success Response Example
+```json
+{
+  "_id": "string",
+  "fullname": {
+    "firstname": "string",
+    "lastname": "string"
+  },
+  "email": "string"
+}
+```
+
+### Error Response Example
+```json
+{
+  "msg": "Error message description"
+}
+```
+
+## Logout User
+`GET /users/logout`
+
+Logout the authenticated user.
+
+### Response Codes
+
+| Status Code | Description |
+|------------|-------------|
+| 200 | User logged out successfully |
+| 401 | Unauthorized - Invalid or missing token |
+| 500 | Internal Server Error |
+
+### Success Response Example
+```json
+{
+  "msg": "User logged out"
+}
+```
+
+### Error Response Example
+```json
+{
+  "msg": "Error message description"
+}
+```
